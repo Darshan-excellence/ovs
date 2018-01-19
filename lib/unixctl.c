@@ -244,6 +244,7 @@ unixctl_server_create(const char *path, struct unixctl_server **serverp)
 #endif
     }
 
+    VLOG_WARN("\n============== anil punix_path, %s", punix_path);
     error = pstream_open(punix_path, &listener, 0);
     if (error) {
         ovs_error(error, "could not initialize control socket %s", punix_path);
